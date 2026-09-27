@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxin Solutions</title>
+    <meta name="description" content="Modern IT Agency providing Custom Software, Cloud Solutions, and IT Consulting.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1', // Indigo
+                            600: '#4f46e5',
+                            900: '#0f172a', // Slate 900
+                            950: '#020617', // Slate 950
+                        },
+                        accent: {
+                            400: '#22d3ee', // Cyan
+                            500: '#06b6d4',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom base styles */
+        body {
+            background-color: #020617;
+            /* Slate 950 */
+            color: #f8fafc;
+            /* Slate 50 */
+            overflow-x: hidden;
+        }
+
+        /* Gradient text utility */
+        .text-gradient {
+            background: linear-gradient(to right, #22d3ee, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-accent-500 selection:text-white">
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="flex items-center gap-2 text-2xl font-bold tracking-tighter">
+                        <i class="fa-solid fa-layer-group text-accent-400"></i>
+                        <span>Toxin<span class="text-accent-400">Solutions</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</a>
+                    <a href="#services"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Services</a>
+                    <a href="#about"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+                    <a href="#contact"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
+                    <a href="#contact"
+                        class="px-5 py-2.5 rounded-lg bg-accent-500 hover:bg-accent-400 text-brand-950 font-semibold text-sm transition-all shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+                        Get a Quote
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden glass mt-2 border-t border-slate-800 absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-xl">
+                <a href="#home"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Home</a>
+                <a href="#services"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Services</a>
+                <a href="#about"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">About</a>
+                <a href="#contact"
+                    class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Abstract Background Effects -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div
+                class="absolute top-1/4 left-1/4 w-72 h-72 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+            </div>
+            <div
+                class="absolute top-1/3 right-1/4 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute bottom-1/4 left-1/2 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000">
+            </div>
+            <!-- Grid pattern overlay -->
+            <div
+                class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-700 bg-slate-800/50 mb-6 backdrop-blur-sm">
+                    <span class="flex w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+                    <span class="text-xs font-medium text-slate-300 uppercase tracking-wider">Next-Gen IT
+                        Solutions</span>
+                </div>
+
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                    Architecting Your <br class="hidden md:block" />
+                    <span class="text-gradient">Digital Evolution</span>
+                </h1>
+
+                <p class="mt-4 text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    We build scalable software, secure cloud infrastructures, and provide strategic IT consulting to
+                    empower your business in the modern digital landscape.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact"
+                        class="px-8 py-4 rounded-xl bg-accent-500 hover:bg-accent-400 text-brand-950 font-bold text-lg transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center justify-center gap-2">
+                        Start Your Project <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#services"
+                        class="px-8 py-4 rounded-xl border border-slate-600 hover:border-slate-400 bg-slate-800/50 hover:bg-slate-800 text-white font-medium text-lg transition-all flex items-center justify-center">
+                        Explore Services
+                    </a>
+                </div>
+
+                <!-- Social Proof / Client Logos Placeholder -->
+                <div class="mt-20 pt-10 border-t border-slate-800/50">
+                    <p class="text-sm text-slate-500 mb-6 uppercase tracking-widest font-semibold">Trusted by innovative
+                        companies</p>
+                    <div
+                        class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                        <i class="fa-brands fa-aws text-4xl"></i>
+                        <i class="fa-brands fa-microsoft text-4xl"></i>
+                        <i class="fa-brands fa-google text-4xl"></i>
+                        <i class="fa-brands fa-digital-ocean text-4xl"></i>
+                        <i class="fa-brands fa-docker text-4xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative bg-brand-900 border-y border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core <span class="text-accent-400">Services</span>
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Comprehensive technology solutions designed to solve complex
+                    challenges and drive measurable growth for your enterprise.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service Card 1 -->
+                <div
+                    class="group bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 hover:bg-slate-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(34,211,238,0.3)] backdrop-blur-sm">
+                    <div
+                        class="w-14 h-14 bg-brand-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code text-2xl text-accent-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-accent-400 transition-colors">Custom
+                        Software</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Tailor-made web and mobile applications engineered for performance, security, and exceptional
+                        user experiences.
+                    </p>
+                    <ul class="text-slate-500 text-sm space-y-2">
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> Web Applications</li>
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> Mobile Apps (iOS/Android)</li>
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> API Development</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="group bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 hover:bg-slate-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(34,211,238,0.3)] backdrop-blur-sm">
+                    <div
+                        class="w-14 h-14 bg-brand-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cloud text-2xl text-accent-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-accent-400 transition-colors">Cloud
+                        Infrastructure</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Scalable, secure, and resilient cloud architectures using AWS, Azure, or GCP to optimize your
+                        operations.
+                    </p>
+                    <ul class="text-slate-500 text-sm space-y-2">
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> Cloud Migration</li>
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> DevOps & CI/CD</li>
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> Serverless Architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="group bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 hover:bg-slate-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(34,211,238,0.3)] backdrop-blur-sm">
+                    <div
+                        class="w-14 h-14 bg-brand-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line text-2xl text-accent-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-accent-400 transition-colors">IT
+                        Consulting</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Strategic guidance to align your technology investments with business objectives for maximum
+                        ROI.
+                    </p>
+                    <ul class="text-slate-500 text-sm space-y-2">
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> Digital Transformation</li>
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> Cybersecurity Audits</li>
+                        <li><i class="fa-solid fa-check text-accent-500 mr-2"></i> Tech Stack Assessment</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- About Image/Graphic -->
+                <div class="relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-accent-500 to-brand-500 rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg">
+                    </div>
+                    <div
+                        class="relative bg-slate-800 border border-slate-700 rounded-2xl p-2 aspect-square overflow-hidden flex items-center justify-center group">
+                        <!-- Abstract Tech Grid Placeholder since we can't use external specific images reliably -->
+                        <div
+                            class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:40px_40px]">
+                        </div>
+                        <div class="relative z-10 text-center space-y-4">
+                            <i
+                                class="fa-solid fa-microchip text-6xl text-slate-600 group-hover:text-accent-400 transition-colors duration-500"></i>
+                            <div class="flex justify-center gap-2">
+                                <span class="w-12 h-1 bg-brand-500 rounded-full"></span>
+                                <span class="w-4 h-1 bg-accent-500 rounded-full"></span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stats -->
+                        <div
+                            class="absolute bottom-6 left-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700 p-4 rounded-xl shadow-lg">
+                            <p class="text-3xl font-bold text-accent-400">10+</p>
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1">Years Experience
+                            </p>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 bg-slate-900/90 backdrop-blur-sm border border-slate-700 p-4 rounded-xl shadow-lg">
+                            <p class="text-3xl font-bold text-brand-500">150+</p>
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1">Projects Shipped
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Text -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Empowering businesses through <span
+                            class="text-gradient">technology</span>.</h2>
+                    <p class="text-slate-400 mb-6 leading-relaxed text-lg">
+                        At NexusTech, we believe that technology should be an enabler, not a hurdle. Founded by a team
+                        of passionate engineers and strategists, we exist to bridge the gap between complex technical
+                        challenges and elegant, scalable business solutions.
+                    </p>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Our methodology is rooted in transparency, agility, and uncompromising quality. Whether you are
+                        a disruptive startup needing an MVP, or an enterprise undergoing digital transformation, we
+                        adapt to your unique environment to deliver results that matter.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-bullseye text-accent-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Our Mission</h4>
+                                <p class="text-sm text-slate-500">To build robust software that accelerates human
+                                    potential and business efficiency.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-lightbulb text-brand-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Our Vision</h4>
+                                <p class="text-sm text-slate-500">To be the global benchmark for technical excellence
+                                    and client partnership.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative bg-brand-900 border-t border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something <span
+                            class="text-accent-400">Great</span></h2>
+                    <p class="text-slate-400">Ready to transform your ideas into reality? Drop us a message and our team
+                        will get back to you within 24 hours.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+
+                    <!-- Contact Info -->
+                    <div class="md:col-span-2 space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-6 text-white">Contact Information</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-accent-400 flex-shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-500 font-medium">Email Us</p>
+                                        <a href="mailto:hello@nexustech.agency"
+                                            class="text-white hover:text-accent-400 transition-colors">hello@nexustech.agency</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-accent-400 flex-shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-500 font-medium">Call Us</p>
+                                        <a href="tel:+1234567890"
+                                            class="text-white hover:text-accent-400 transition-colors">+1 (555)
+                                            123-4567</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-accent-400 flex-shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-500 font-medium">Visit Us</p>
+                                        <p class="text-white">123 Innovation Drive<br>Tech Hub, CA 94043</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="md:col-span-3">
+                        <form id="contactForm"
+                            class="bg-slate-800/50 backdrop-blur-md border border-slate-700/50 p-8 rounded-2xl">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-400 mb-2">Full
+                                        Name</label>
+                                    <input type="text" id="name" name="name" required
+                                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
+                                        placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-400 mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
+                                        placeholder="john@example.com">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="service" class="block text-sm font-medium text-slate-400 mb-2">Interested
+                                    In</label>
+                                <select id="service" name="service"
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors appearance-none">
+                                    <option value="software">Custom Software Development</option>
+                                    <option value="cloud">Cloud Solutions</option>
+                                    <option value="consulting">IT Consulting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message"
+                                    class="block text-sm font-medium text-slate-400 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors resize-none"
+                                    placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-accent-500 hover:bg-accent-400 text-brand-950 font-bold text-lg py-4 rounded-xl transition-all shadow-[0_0_15px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)]">
+                                Send Message
+                            </button>
+                            <p id="formStatus" class="mt-4 text-center text-sm hidden"></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <div class="flex flex-col items-center md:items-start">
+                    <a href="#home" class="flex items-center gap-2 text-2xl font-bold tracking-tighter mb-2">
+                        <i class="fa-solid fa-layer-group text-accent-400"></i>
+                        <span>Nexus<span class="text-accent-400">Tech</span></span>
+                    </a>
+                    <p class="text-slate-500 text-sm text-center md:text-left">© <span id="year"></span> NexusTech IT
+                        Solutions. All rights reserved.</p>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 transition-all">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0A66C2] transition-all">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1DA1F2] transition-all">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Effect (Glassmorphism on scroll)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('glass');
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('glass');
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Form Submission Mock Handler
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Get button to show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            // Simulate API call delay
+            setTimeout(() => {
+                contactForm.reset();
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+
+                formStatus.textContent = 'Message sent successfully! We will be in touch shortly.';
+                formStatus.className = 'mt-4 text-center text-sm text-green-400 block';
+
+                // Hide status after 5 seconds
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
